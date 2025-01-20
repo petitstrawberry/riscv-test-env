@@ -231,7 +231,7 @@ reset_vector:                                                           \
         la t0, stvec_handler;                                           \
         beqz t0, 1f;                                                    \
         /* Delete fot VioletVM (M-mode emulation) */                    \
-        // csrw stvec, t0;                                              \
+        /* csrw stvec, t0;                        */                    \
         li t0, (1 << CAUSE_LOAD_PAGE_FAULT) |                           \
                (1 << CAUSE_STORE_PAGE_FAULT) |                          \
                (1 << CAUSE_FETCH_PAGE_FAULT) |                          \
